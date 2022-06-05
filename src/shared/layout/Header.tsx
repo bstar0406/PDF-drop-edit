@@ -3,6 +3,15 @@ import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
+import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
+
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ZoomInIcon from '@mui/icons-material/ZoomIn';
+import ZoomOutIcon from '@mui/icons-material/ZoomOut';
+import CloseIcon from '@mui/icons-material/Close';
+
 
 import Logo from '../../assets/images/logo.png'
 
@@ -35,10 +44,31 @@ const Header = () => {
           >
             Fill Any PDF
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}></Box>
-
-          <Box sx={{ flexGrow: 0 }}></Box>
+          <Box sx={{ flexGrow: 0 }}>
+          <IconButton aria-label="up" size="medium" color='default'>
+            <ArrowUpwardIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton aria-label="pagenumber" size="small" sx={{color:'#000000'}}>
+            12
+          </IconButton>
+          <IconButton aria-label="down" size="medium" sx={{color:'#000000'}}>
+            <ArrowDownwardIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton aria-label="zoomout" size="medium" sx={{color:'#000000'}}>
+            <ZoomOutIcon fontSize="inherit" />
+          </IconButton>
+          <IconButton aria-label="pagenumber" size="small" sx={{color:'#000000'}}>
+            90%
+          </IconButton>
+          <IconButton aria-label="zoomin" size="medium" sx={{color:'#000000'}}>
+            <ZoomInIcon fontSize="inherit" />
+          </IconButton>
+          <Button variant="text">Save</Button>
+          <IconButton aria-label="close" size="medium" sx={{color:'#000000'}}>
+            <CloseIcon fontSize="inherit" />
+          </IconButton>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
