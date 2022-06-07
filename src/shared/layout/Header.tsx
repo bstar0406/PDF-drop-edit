@@ -17,9 +17,9 @@ import Logo from '../../assets/images/logo.png'
 
 const Header = () => {
   return (
-    <AppBar position="static" sx={{ bgcolor: '#f1f1ee' }}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+    <AppBar position="static" sx={{ bgcolor: '#f1f1ee', height:'10vh' }}>
+      <Container maxWidth="xl" >
+        <Toolbar disableGutters sx={{ bgcolor: '#f1f1ee', height:'10vh' }}>
           <Typography
             src={Logo}
             alt="logo"
@@ -49,7 +49,7 @@ const Header = () => {
           <IconButton aria-label="up" size="medium" color='default'>
             <ArrowUpwardIcon fontSize="inherit" />
           </IconButton>
-          <IconButton aria-label="pagenumber" size="small" sx={{color:'#000000'}}>
+          <IconButton aria-label="down" size="small" sx={{color:'#000000'}}>
             12
           </IconButton>
           <IconButton aria-label="down" size="medium" sx={{color:'#000000'}}>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,3 +14,43 @@ code {
     monospace;
 }
 
+.App{
+  height: 10vh;
+}
+.base-style{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-width: 2;
+  border-radius: 2;
+  border-color: #6ACDB4 !important;
+  border-style: dashed;
+  background-color: #f1f1ee;
+  color: #bdbddd;
+  outline: none;
+  transition: border .24s ease-in-out;
+  height: 40px;
+  padding: 50px;
+}
+
+.browse {
+  color: rgb(66, 84, 240);
+  cursor: pointer;
+}
+
+.drop-zone{
+  width: 400px;
+  margin: auto;
+}
+
+.main{
+  height: 90vh;
+  display: flex;
+}
+
+.edit-panel{
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
