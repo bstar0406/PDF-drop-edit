@@ -10,7 +10,8 @@ import Grow from '@mui/material/Grow'
 
 const EditPanel = () => {
   const [btnState, setBtnState] = React.useState<Boolean>(false)
-  const [overState, setOverState] = React.useState(false)
+  const [overState, setOverState] = React.useState<any>(false)
+  const [currentFile, setCurrentFile] = React.useState<any>(null);
   const editClickHandler = () => {
     setBtnState(!btnState)
   }
@@ -38,8 +39,6 @@ const EditPanel = () => {
               color="warning"
               aria-label="add"
               size="small"
-              onClick={() => editClickHandler()}
-              onMouseOver={() => editOverHandler()}
             >
               <EditLocationIcon />
             </Fab>
@@ -47,8 +46,6 @@ const EditPanel = () => {
               color="inherit"
               aria-label="add"
               size="small"
-              onClick={() => editClickHandler()}
-              onMouseOver={() => editOverHandler()}
             >
               <AttachFileIcon />
             </Fab>
@@ -56,8 +53,6 @@ const EditPanel = () => {
               color="primary"
               aria-label="add"
               size="small"
-              onClick={() => editClickHandler()}
-              onMouseOver={() => editOverHandler()}
             >
               <Typography
                 component="span"
@@ -70,8 +65,6 @@ const EditPanel = () => {
               color="error"
               aria-label="add"
               size="small"
-              onClick={() => editClickHandler()}
-              onMouseOver={() => editOverHandler()}
             >
               <CheckIcon />
             </Fab>
@@ -79,8 +72,6 @@ const EditPanel = () => {
               color="error"
               aria-label="add"
               size="small"
-              onClick={() => editClickHandler()}
-              onMouseOver={() => editOverHandler()}
             >
               <TitleIcon />
             </Fab>
@@ -90,8 +81,8 @@ const EditPanel = () => {
         <Fab
           color={btnState ? 'error' : 'success'}
           aria-label="add"
-          onClick={() => editClickHandler()}
-          onMouseOver={() => editOverHandler()}
+          onClick={editClickHandler}
+          onMouseOver={editOverHandler}
         >
           {btnState && <TitleIcon />}
           {!btnState && <EditIcon />}

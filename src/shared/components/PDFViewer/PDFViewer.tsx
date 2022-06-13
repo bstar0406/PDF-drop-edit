@@ -22,18 +22,8 @@ const PDFViewer = () => {
   const { GoToNextPage, GoToPreviousPage } = pageNavigationPluginInstance
 
   return (
-    <div className="flex-grow-1 pdf-viewer">
+    <div className="pdf-viewer">
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.14.305/build/pdf.worker.js">
-              <div
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  overflow: 'auto',
-                  background: '#F0F0F0 !important',
-                }}
-              >
                 <Viewer
                   fileUrl={'./assets/pdf/aaa.pdf'}
                   plugins={[
@@ -41,7 +31,6 @@ const PDFViewer = () => {
                     pageNavigationPluginInstance,
                   ]}
                 />
-              </div>
             </Worker>
             <div className="d-flex justify-content-between">
               <div>

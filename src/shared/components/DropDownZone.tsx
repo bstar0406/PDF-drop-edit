@@ -1,6 +1,11 @@
+import React from 'react'
 import { useDropzone } from 'react-dropzone'
 
-const DropDownZone = () => {
+interface IPropsDropZone{
+  loadFile:Function;
+}
+const DropDownZone = (props:IPropsDropZone) => {
+  const [files, setFiles] = React.useState<Array<any>>([]);
   const {
     getRootProps,
     getInputProps,
@@ -13,7 +18,14 @@ const DropDownZone = () => {
     noClick: true,
     noKeyboard: true,
     maxSize: 2 * 1024 * 1024,
+    maxFiles:1,
+    onDrop: acceptedFiles => {
+      setFiles(acceptedFiles);
+    }
   })
+  React.useEffect(()=>{
+    if(files.length!==0)props.loadFile(files[0])
+  },[files])
 
   const acceptedFileItems = acceptedFiles.map((file: any) => (
     <li key={file.path}>
@@ -21,7 +33,7 @@ const DropDownZone = () => {
     </li>
   ))
   return (
-    <div className="drop-zone">
+    <div className={files.length===0?'drop-zone':'hidden'}>
       <div {...getRootProps()} className="base-style">
         <input {...getInputProps()} />
         <div>
