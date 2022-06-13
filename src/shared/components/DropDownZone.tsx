@@ -1,10 +1,8 @@
 import React from 'react'
 import { useDropzone } from 'react-dropzone'
 
-interface IPropsDropZone{
-  loadFile:Function;
-}
-const DropDownZone = (props:IPropsDropZone) => {
+
+const DropDownZone = () => {
   const [files, setFiles] = React.useState<Array<any>>([]);
   const {
     getRootProps,
@@ -23,9 +21,7 @@ const DropDownZone = (props:IPropsDropZone) => {
       setFiles(acceptedFiles);
     }
   })
-  React.useEffect(()=>{
-    if(files.length!==0)props.loadFile(files[0])
-  },[files])
+
 
   const acceptedFileItems = acceptedFiles.map((file: any) => (
     <li key={file.path}>

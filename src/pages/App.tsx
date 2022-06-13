@@ -13,7 +13,7 @@ const App = () => {
     <div className="App d-flex">
       <Header currentFile={currentFile}/>
       <div className='main d-flex align-content-center'>
-        <DropDownZone  loadFile={loadFile}/>
+        <DropDownZone />
         <EditPanel />
         {currentFile && <PDFViewer />}
     </div>
